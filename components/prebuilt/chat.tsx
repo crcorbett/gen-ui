@@ -67,7 +67,7 @@ export default function Chat() {
         <div className="flex flex-col gap-1 w-full max-w-fit mr-auto">
           {element.ui}
         </div>
-      </div>,
+      </div>
     );
 
     // consume the value stream to obtain the final value

@@ -5,7 +5,7 @@ import {
   ChatPromptTemplate,
   MessagesPlaceholder,
 } from "@langchain/core/prompts";
-import { githubTool, invoiceTool, weatherTool, websiteDataTool } from "./tools";
+import { simpleTool } from "./tools";
 import { ChatOpenAI } from "@langchain/openai";
 
 interface AgentExecutorState {
@@ -46,7 +46,7 @@ Your job is to determine whether or not you have a tool which can handle the use
     ["human", "{input}"],
   ]);
 
-  const tools = [githubTool, invoiceTool, weatherTool, websiteDataTool];
+  const tools = [simpleTool];
 
   const llm = new ChatOpenAI({
     ...process.env,
@@ -93,10 +93,7 @@ const invokeTools = async (
     throw new Error("No tool call found.");
   }
   const toolMap = {
-    [githubTool.name]: githubTool,
-    [invoiceTool.name]: invoiceTool,
-    [weatherTool.name]: weatherTool,
-    [websiteDataTool.name]: websiteDataTool,
+    [simpleTool.name]: simpleTool,
   };
 
   const selectedTool = toolMap[state.toolCall.name];

@@ -41,13 +41,13 @@ export const InvoiceSchema = z.object({
     .array(LineItemSchema)
     .describe("List of line items in the invoice"),
   shippingAddress: ShippingAddressSchema.optional().describe(
-    "Shipping address for the order",
+    "Shipping address for the order"
   ),
   customerInfo: CustomerInfoSchema.optional().describe(
-    "Information about the customer",
+    "Information about the customer"
   ),
   paymentInfo: PaymentInfoSchema.optional().describe(
-    "Payment information for the order",
+    "Payment information for the order"
   ),
 });
 

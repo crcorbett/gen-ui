@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.2.6
     version: 0.2.6(langchain@0.2.5)
   '@langchain/langgraph':
-    specifier: ^0.0.22
-    version: 0.0.22(langchain@0.2.5)
+    specifier: ^0.0.23
+    version: 0.0.23(langchain@0.2.5)
   '@langchain/openai':
     specifier: ^0.0.34
     version: 0.0.34(langchain@0.2.5)
@@ -885,8 +885,8 @@ packages:
       - openai
     dev: false
 
-  /@langchain/langgraph@0.0.22(langchain@0.2.5):
-    resolution: {integrity: sha512-VdWUDRo/CXe1SjR34WxtbIwxIykSKjbdduKaNxCIPCZYxhfeL+NY3xi3F8ES6RTQV9gNYrl6ODuuXQtACQpK7g==}
+  /@langchain/langgraph@0.0.23(langchain@0.2.5):
+    resolution: {integrity: sha512-pXlcsBOseT5xdf9enUqbLQ/59LaZxgMI2dL2vFJ+EpcoK7bQnlzzhRtRPp+vubMyMeEKRoAXlaA9ObwpVi93CA==}
     engines: {node: '>=18'}
     peerDependencies:
       better-sqlite3: ^9.5.0

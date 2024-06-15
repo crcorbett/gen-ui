@@ -1,6 +1,6 @@
 import { BaseMessage } from "@langchain/core/messages";
 import { RunnableConfig } from "@langchain/core/runnables";
-import { StateGraph, START, END } from "@langchain/langgraph";
+import { StateGraph, START, END, StateGraphArgs } from "@langchain/langgraph";
 import {
   ChatPromptTemplate,
   MessagesPlaceholder,
@@ -109,15 +109,17 @@ const invokeTools = async (
   };
 };
 
+const agentExecutorState: StateGraphArgs<AgentExecutorState>["channels"] = {
+  input: null,
+  chat_history: null,
+  result: null,
+  toolCall: null,
+  toolResult: null,
+};
+
 export function agentExecutor() {
   const workflow = new StateGraph<AgentExecutorState>({
-    channels: {
-      input: null,
-      chat_history: null,
-      result: null,
-      toolCall: null,
-      toolResult: null,
-    },
+    channels: agentExecutorState,
   })
     .addNode("invokeModel", invokeModel)
     .addNode("invokeTools", invokeTools)

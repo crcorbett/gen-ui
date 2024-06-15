@@ -1,5 +1,7 @@
 import Chat from "@/components/prebuilt/chat";
 
+export const maxDuration = 300;
+
 export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-between px-24">
